@@ -1,0 +1,88 @@
+// Place all the styles related to the lookup controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a, a:hover, a:visited {
+	text-decoration: none;
+}
+
+.form {
+	position: relative;
+	margin: 20px 0 20px;
+	padding: 20px 0 20px;
+	height: 180px;
+	border-top: #ccc 1px solid;
+	border-bottom: #ccc 1px solid;
+	overflow: hidden;
+}
+
+.username {
+	form {
+		margin: 0;
+		.text_fields {
+			overflow: hidden; 
+			padding-right: 1em;
+			input[type="text"] {
+				width: 100%;
+				margin: 0 0 5px;
+			}
+		}
+		input[type="submit"] {
+			height: 66px;
+			float: right;
+			margin: 0;
+		}
+	}
+	p {
+		margin-top: 10px;
+		color: #666;
+	}
+}
+
+
+.uid {
+	h3 {
+	  margin-top: -5px;
+	  margin-bottom: 10px;
+	}
+	img#loading {
+	  position: absolute; 
+	  left: 50%; 
+	  margin-left: -16px; 
+	  top: 50%; 
+	  margin-top: -16px; 
+	  display: none;
+  }
+	.attributes {
+		img {
+			width: 80px;
+			float: left;
+			margin-right: 15px;
+		}
+		.info {
+			float: left;
+			width: 250px;
+			ul > li {
+				margin: 0 0 5px 0;
+				font-size: 12px;
+			}
+		}
+
+	}
+}
+
+.link {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.attribution {
+  text-align: center;
+  font-size: 12px;
+	a,
+	a:hover,
+	a:visited {
+		text-decoration: none;
+	}
+}
+

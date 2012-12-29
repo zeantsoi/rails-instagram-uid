@@ -1,0 +1,17 @@
+$('img#loading').hide();
+if ('<%= @return[:error] %>') {
+	$('.uid > h4').html('<%= @return[:error] %>');
+	$('.uid > h4').fadeIn();
+} else {
+	$('.uid > h3').html('<%= @return[:id] %>');
+		$('.uid > h3').fadeIn();
+	html = '<img src="<%= @return[:profile_picture] %>" /><div class="info"><ul>';	 				
+		attributes = ['full_name', 'website', 'bio'];
+		<% @return.each do |k, v| %>
+			if (($.inArray('<%= k %>', attributes)) != -1) {
+				html += '<li><%= v %></li>';
+			}
+		<% end %>
+		$('.attributes').html(html += "</ul></div>");
+		$('.attributes').fadeIn();
+}
