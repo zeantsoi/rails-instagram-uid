@@ -6,14 +6,14 @@ class LookupController < ApplicationController
 			access_token = params[:access_token].blank? ? INSTAGRAM_ACCESS_TOKEN : params[:access_token]
 			Instagram.configure {|config| config.access_token = access_token}
 
-			unless params[:username].empty?
+			unless params[:username].blank?
 				begin
 					users = Instagram.user_search(params[:username])
 				rescue Exception => e
-					access_token_error = if params[:access_token]
-						"The Access Token entered is invalid"
-					else
+					access_token_error = unless params[:access_token].blank?
 						"The Access Token in your Instagram initializer is invalid"
+					else
+						"The Access Token entered is invalid"
 					end
 				end
 			end
