@@ -1,9 +1,9 @@
 $(function() {
 	$('img#loading')
-		.hide()  // hide it initially.
+		.hide()
 		.ajaxStart(function() {
 			clearData();
-			$(this).show(); // show on any Ajax event.
+			$(this).show();
 		});
 });
 

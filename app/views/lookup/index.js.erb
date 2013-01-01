@@ -1,17 +1,33 @@
+// Hide loading gif
 $('img#loading').hide();
+
+// Display error message if there was an exception
 if ('<%= @return[:error] %>') {
 	$('.uid > h4').html('<%= @return[:error] %>');
 	$('.uid > h4').fadeIn();
+
+// Load attributes if request was successful
 } else {
+
+	// Load id into the DOM and display
 	$('.uid > h3').html('<%= @return[:id] %>');
-		$('.uid > h3').fadeIn();
-	html = '<img src="<%= @return[:profile_picture] %>" /><div class="info"><ul>';	 				
+	$('.uid > h3').fadeIn();
+	
+	// Initialize html string var and begin building html block
+	var html = '<img src="<%= @return[:profile_picture] %>" /><div class="info"><ul>';	 				
+		
 		attributes = ['full_name', 'website', 'bio'];
+
+		// For each attribute in attributes array, map and format into html if there's a key that matches the attribute
 		<% @return.each do |k, v| %>
 			if (($.inArray('<%= k %>', attributes)) != -1) {
 				html += '<li><%= v %></li>';
 			}
 		<% end %>
+
+		// End html block and load into the DOM
 		$('.attributes').html(html += "</ul></div>");
+
+		// Show the attributes div
 		$('.attributes').fadeIn();
 }

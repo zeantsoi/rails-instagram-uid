@@ -9,11 +9,14 @@
     <% end %>
     <p>If you'd like to user your own Instagram access token, you can enter it above. <%= link_to 'Get an access token here.', 'http://instagram.com/developer/register/' %></p>
 </div>
+
 <div class="eight columns form uid">
 	<%= image_tag('loading.gif', {:alt => 'loading', :id => 'loading'}) %>
     <h2>Instagram User ID</h2>
     <h3><%= @return[:id] if @return[:id] %></h3>
     <h4><%= @return[:error] %></h4>
+    
+    <!-- Manually load attributes into div if request is not AJAX -->
     <div class="attributes">
     	<% if @return[:profile_picture] %><%= image_tag(@return[:profile_picture], {:alt => @return[:username]}) %><% end %>
     	<div class="info">
@@ -24,11 +27,14 @@
 	    	</ul>
     	</div>
     </div>
+
 </div>
+
 <div class="sixteen columns link">
     <h3><%= link_to 'Django Source Code', 'https://github.com/zeantsoi/django-instagram-uid' %></h3>
     <h3><%= link_to 'Rails Source Code', 'https://github.com/zeantsoi/rails-instagram-uid' %></h3>
 </div>
+
 <div class="sixteen columns attribution">
     <%= link_to 'Created by Zean Tsoi', 'http://www.zeantsoi.com/'  %></a>
 </div>
