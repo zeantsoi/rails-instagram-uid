@@ -5,6 +5,7 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# For deployment to Heroku
 group :production do
   gem 'pg'
 end
